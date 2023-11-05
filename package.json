@@ -1,0 +1,15 @@
+{
+  "name": "chai-aur-backend",
+  "version": "1.0.0",
+  "description": "video steaming project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "backend"
+  ],
+  "author": "Himanshu Yadav",
+  "license": "ISC"
+}
