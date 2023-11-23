@@ -52,6 +52,7 @@ const userSchema = Schema({
 userSchema.pre("save", async function(next) {
     // Checking Before encryption, is password modified
     if(!this.isModified("password")) return next();
+    
     this.password = await bcrypt.hash(this.password, 10);
     // this.password = bcrypt.hash(this.password, 10);
     next();
