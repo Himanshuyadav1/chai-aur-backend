@@ -273,6 +273,8 @@ const updateUserAvatar = asyncHandler(async (req, res) => {
         throw new ApiError(400, "Avatar file is missing");
     }
 
+    // Todo: delete old image - assignment - make util function
+
     const avatar = await uploadOnCloudinary(avatarLocalPath);
 
     if(!avatar.url) {
@@ -300,6 +302,8 @@ const updateUserCoverImage = asyncHandler(async (req, res) => {
     if(!coverImageLocalPath) {
         throw new ApiError(400, "Cover Image file is missing");
     }
+
+    // Todo: delete old image - assignment - make util function
 
     const coverImage = await uploadOnCloudinary(coverImageLocalPath);
 
