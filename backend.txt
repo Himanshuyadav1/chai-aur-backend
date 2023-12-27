@@ -1,0 +1,19 @@
+1.	Access token short lived hote h aur Refresh token long lived hote hain. refresh token db m bhi rakhte hai aur user ko bhi dete h. user ko validate hum access token s krte h par
+	jab access token expire ho jata h tab us case m db p request krte h refresh token s aur check krte h ki user k pass jo refresh token h wo db p jo refresh token h usse match ho rha 
+	hai to hum new access token user ko provide kr dete hai.
+2.	Models m jo custom methods(isPasswordCorrect) banate h wo model k instance(user) p avaliable honge naki models(User) p.
+3.	jab bhi model k instance(user) ki kisi ek value ko update krte h to usko save krana hota h db m par jab bhi aisa krte h to mongoose k model kickin ho jate h matlab ki wo schema
+	k hisab s validate krne lagta hai to aise situation m save method m ek parameter pass krte hai. user.save({ validateBeforeSave: false }) isse ye bina validate k save krne deta h.
+4. 	cookies ko bydefault koi bhi modify kr skta hai FE p but jab httpOnly aur secure ko true kr dete hai tab cookies ko sirf servers s modify kr skte hai.	  
+5.	cookies m access token aur refresh token bhejne k alawa hum response m bhi access token aur refresh token send krna acha hota h kyuki ho skta h FE side s bhi in tokens ko use krna 
+	ho.
+6.	kabhi kabhi kuch codes m jab res ka use nhi hota h to uske jagah _ use krte h. (req, _, next)
+7.	user ki koi profile pic (file) update krna ho to humesa uske liye alag end point banana chahiye kyuki isse network request p load kam hota h.
+8.	aggregation m mongoose kaam nhi karta h aggregation pipeline ka jitna code hota hai wo directly jata hai. to isme mongodb ki id banana padta hai jo mongoose s ban jata h.
+	$match: {
+                _id: new mongoose.Types.ObjectId(req.user._id)
+            }
+Interview question: 
+1.	req.user._id se kya milta hai?
+ans-	isse hume mongodb ki id nhi milti h balki id ka string milta hai jisko mongoose internally mongodb ki id yani ki ObjectId m convert kr deta hai. mongodb m id 	ObjectId('8ujsh7ehhdicdhhicdhd') aise hota hai.
+	
