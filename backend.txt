@@ -13,6 +13,9 @@
 	$match: {
                 _id: new mongoose.Types.ObjectId(req.user._id)
             }
+9.	mongoose-aggregate-paginate-v2 ye pkg tab use krte hai jab ek hi baar m pura content show nhi krna ho. isse kuch content baad m load krwa skte hai ya fir next page p show krwa skte
+	hai.
+	
 Interview question: 
 1.	req.user._id se kya milta hai?
 ans-	isse hume mongodb ki id nhi milti h balki id ka string milta hai jisko mongoose internally mongodb ki id yani ki ObjectId m convert kr deta hai. mongodb m id 	ObjectId('8ujsh7ehhdicdhhicdhd') aise hota hai.
